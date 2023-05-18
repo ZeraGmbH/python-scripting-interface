@@ -6,9 +6,6 @@ project(PythonScriptingInterface LANGUAGES CXX)
 #Automoc and RCC ON. Needed in QT projects
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-#C++ 11 Flag
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #Set project Version
 set(PythonScriptingInterface_VERSION_MAJOR "1")
