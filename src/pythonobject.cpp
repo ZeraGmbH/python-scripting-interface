@@ -94,8 +94,8 @@ PythonObject &PythonObject::operator=(const PythonObject& obj)
 {
     this->m_pInst=obj.m_pInst;
     this->m_pClass=obj.m_pInst;
-    _Py_INCREF(this->m_pClass);
-    _Py_INCREF(this->m_pInst);
+    Py_INCREF(this->m_pClass);
+    Py_INCREF(this->m_pInst);
     return *this;
 }
 
