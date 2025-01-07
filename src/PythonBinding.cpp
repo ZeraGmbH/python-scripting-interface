@@ -121,7 +121,7 @@ PythonObject PythonBinding::createObject(const QString &p_name)
     PythonObject tmpPyP;
     tmpPyP.m_pClass = PyObject_GetAttrString(m_pModule, p_name.toUtf8());
     tmpPyP.m_pArgs  = Py_BuildValue("()");
-    tmpPyP.m_pInst  = PyEval_CallObject(tmpPyP.m_pClass, tmpPyP.m_pArgs);
+    tmpPyP.m_pInst  = PyObject_CallObject(tmpPyP.m_pClass, tmpPyP.m_pArgs);
     Py_DECREF(tmpPyP.m_pClass);
     Py_DECREF(tmpPyP.m_pArgs);
     return tmpPyP;
