@@ -14,7 +14,10 @@ set(PROJECT_VERSION "${PythonScriptingInterface_VERSION_MAJOR}.${PythonScripting
 include(FeatureSummary)
 include(GNUInstallDirs)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
+set(QT_MAJOR_VER "5" CACHE STRING "Qt major version")
+set(QTX "Qt${QT_MAJOR_VER}")
+
+find_package(${QTX} COMPONENTS Core REQUIRED)
 find_package(PythonLibs 3.8 REQUIRED)
 
 file(GLOB SOURCES
@@ -43,7 +46,7 @@ add_library(PythonScriptingInterface SHARED
 
 target_link_libraries(PythonScriptingInterface
     PRIVATE
-    Qt5::Core
+    ${QTX}::Core
     ${PYTHON_LIBRARIES}
 )	
 
