@@ -105,11 +105,11 @@ PyObject* PythonBinding::callFunction(QString p_name,QList<PyObject*> p_args)
         else {
             if (PyErr_Occurred())
                 PyErr_Print();
-            qout << "Cannot find function" <<  p_name << endl;
+            qout << "Cannot find function" <<  p_name << Qt::endl;
         }
         Py_XDECREF(m_pFunc);
     }else{
-        qout << "Module not available" << endl;
+        qout << "Module not available" << Qt::endl;
     }
 
 

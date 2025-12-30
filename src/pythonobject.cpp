@@ -53,12 +53,12 @@ PyObject* PythonObject::callFunction(const QString &p_name, QList<PyObject *> p_
         else {
             if (PyErr_Occurred())
                 PyErr_Print();
-            qout << "Cannot find function" <<  p_name << endl;
+            qout << "Cannot find function" <<  p_name << Qt::endl;
         }
         Py_XDECREF(m_pFunc);
         Py_DECREF(m_pClass);
     }else{
-        qout << "Module not available" << endl;
+        qout << "Module not available" << Qt::endl;
     }
 
 
